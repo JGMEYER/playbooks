@@ -20,9 +20,10 @@ chown -R $USER:staff ~/.ssh
 sudo launchctl stop com.openssh.sshd
 sudo launchctl start com.openssh.sshd
 ```
-- [PC] Load private key to PuTTY in `Connection>SSH>Auth`
-- [PC] PuTTY: Forward port 5901 to "localhost:5900" in `Connection>SSH>Tunnels`. This means all traffic from 5901 on the PC will be pushed through the 5900 port on the MAC.
-- [PC] PuTTY: Configure Session to connect to `<MACBOOK_IP>:22`. This will connect you to the macbook via SSH and ultimately securely forward information from PC:5901 to MAC:5900.
+- [PC] In [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html):
+  - `Connection>SSH>Auth`: upload private key file to bottom-most field.
+  - `Connection>SSH>Tunnels`: forward port 5901 to "localhost:5900". This means all traffic from 5901 on the PC will be pushed through the 5900 port on the MAC.
+  - `Session`: configure session to connect to `<MACBOOK_IP>:22`. This will connect you to the macbook via SSH and ultimately securely forward information from PC:5901 to MAC:5900.
 
 
 ## To connect:
